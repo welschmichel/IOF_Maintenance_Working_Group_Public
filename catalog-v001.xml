@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/ro/releases/2018-10-19/ro.owl" uri="ro.owl"/>
     <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/iao/2017-03-24/iao.owl" uri="IAO/iao.owl"/>
     <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/bfo/2.0/bfo.owl" uri="bfo.owl"/>
     <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/iao/dev/iao.owl" uri="IAO-master/releases/2012-07-11-BFO2/IAO.owl"/>
