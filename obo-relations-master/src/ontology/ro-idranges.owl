@@ -1,0 +1,57 @@
+Prefix: idrange:=<http://purl.obolibrary.org/obo/ro/idrange/>
+Prefix: allocatedto:=<http://purl.obolibrary.org/obo/IAO_0000597>
+Prefix: iddigits:=<http://purl.obolibrary.org/obo/IAO_0000596>
+Prefix: idprefix:=<http://purl.obolibrary.org/obo/IAO_0000599>
+Prefix: idsfor:=<http://purl.obolibrary.org/obo/IAO_0000598>
+
+Ontology: <http://purl.obolibrary.org/obo/ro/ro-idranges.owl>
+  Annotations: idprefix: "http://purl.obolibrary.org/obo/RO_", iddigits: 7, idsfor: "RO"
+
+annotationproperty: allocatedto:
+AnnotationProperty: idprefix:
+AnnotationProperty: iddigits: 
+AnnotationProperty: idsfor: 
+
+Datatype: idrange:1
+Annotations: allocatedto: "Chris Mungall"
+EquivalentTo: xsd:integer[> 2199 , <= 2800]
+
+Datatype: idrange:2
+Annotations: allocatedto: "David Osumi-Sutherland"
+EquivalentTo: xsd:integer[> 2000 , <= 2150]
+
+Datatype: idrange:3
+Annotations: allocatedto: "Melissa Haendel"
+EquivalentTo: xsd:integer[> 3000 , <= 3300]
+
+Datatype: idrange:4
+Annotations: allocatedto: "Chris Mungall, experimental"
+EquivalentTo: xsd:integer[> 4001 , <= 6000]
+
+Datatype: idrange:5
+Annotations: allocatedto: "Matt Brush"
+EquivalentTo: xsd:integer[> 3300 , <= 3600]
+
+Datatype: idrange:6
+Annotations: allocatedto: "Timothée Poisot"
+EquivalentTo: xsd:integer[> 8001 , <= 8100]
+
+Datatype: idrange:7
+Annotations: allocatedto: "Ramona Walls"
+EquivalentTo: xsd:integer[> 8101 , <= 8500]
+
+Datatype: idrange:8
+Annotations: allocatedto: "Anne Thessen"
+EquivalentTo: xsd:integer[> 8501 , <= 9000]
+
+Datatype: idrange:9
+Annotations: allocatedto: "Damion Dooley"
+EquivalentTo: xsd:integer[> 9001 , <= 9500]
+
+Datatype: idrange:10
+Annotations: allocatedto: "Marie-Angélique Laporte"
+EquivalentTo: xsd:integer[> 9501 , <= 10000]
+
+Datatype: idrange:11
+Annotations: allocatedto: "msinclair2"
+EquivalentTo: xsd:integer[> 10001 , <= 10200]

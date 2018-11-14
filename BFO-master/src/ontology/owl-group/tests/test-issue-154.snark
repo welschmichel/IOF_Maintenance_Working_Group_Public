@@ -1,0 +1,165 @@
+(in-package :snark-user)
+
+(defun restart ()
+  (setq snark::*snark-is-running* nil snark-lisp::*running-clocks* nil)
+  (initialize)
+  (print-summary-when-finished nil)
+  (print-term-memory-when-finished nil)
+  )
+
+(restart)
+
+;; From issue 154 http://code.google.com/p/bfo/issues/detail?id=154
+;; ________________________________________________________________
+
+;; x rel-at-some-time y -> exists(t) exists_at(x,t) -> exists_at(y,t) and rel(x,y,t)
+
+
+;; Chris and I have been discussing the temporal relations in the BFO 2 OWL release notes. 
+;; It says that you are using the following definition pattern
+
+;;   x rel-at-some-time y -> exists(t) exists_at(x,t) -> exists_at(y,t) and rel(x,y,t)
+
+;; It seems to me not to capture what you want. First of all it is not
+;; a definition (since it is an "if ... then" not an "if and only
+;; if"), but even if I read it as definition, it has odd
+;; consequences. E.g., something that does not exist at all times is
+;; part-at-some-time of everything else. .
+
+;; Are you sure you don't mean (using prefix notation and parenthesis for clarity): 
+
+;;      (iff 
+;;           (rel-at-some-time x y) 
+;;           (exists (t)
+;;                 (and 
+;;                      (exists_at x t) 
+;;                      (exists_at y t)
+;;                      (rel x y t) 
+;;                     ))))
+
+;; Or in English: 
+;; x is part at some time of y  is defined as there is a time when both exist and at that time x is part of y. 
+
+;; ________________________________________________________________
+
+(defun test-weaker-documented-some-time-relation ()
+  (initialize)
+  ;;  x rel-at-some-time y -> exists(t) exists_at(x,t) -> exists_at(y,t) and rel(x,y,t)
+  (assert '
+   (forall (?x ?y)
+	   (implies 
+	    (rel-at-some-time ?x ?y)
+	    (exists (?t)
+		    (implies
+		     (exists_at ?x ?t)
+		     (and (exists_at ?y ?t)
+			  (rel ?x ?y ?t))))))
+   :name :temporal-some-binary-definition)
+
+  ;; fabian's bug assertion: something that does not exist at all times is part-at-some-time of everything else. .
+  (if (eq :proof-found
+	  (prove '(forall (?x)
+		   (implies 
+		    (exists (?t)
+		     (not (exists_at ?x ?t)))
+		    (forall (?q)
+		     (and (not (= ?x ?q))
+			  (exists (?t1)
+				  (rel ?x ?q ?t1))))))))
+	  :whoops
+	  :seems-ok))
+
+;; Fabian says that he wasn't clear enough which is why this fails.
+(defun test-stronger-documented-some-time-relation ()
+  (initialize)
+  (use-hyperresolution t) ; doesn't terminate with resolution only
+  (print-term-memory-when-finished nil)
+  ;;  x rel-at-some-time y -> exists(t) exists_at(x,t) -> exists_at(y,t) and rel(x,y,t)
+  (assert '
+   (forall (?x ?y)
+	   (iff
+	    (rel-at-some-time ?x ?y)
+	    (exists (?t)
+		    (implies
+		     (exists_at ?x ?t)
+		     (and (exists_at ?y ?t)
+			  (rel ?x ?y ?t))))))
+   :name :temporal-some-binary-definition)
+
+  ;; fabian's bug assertion: something that does not exist at all times is part-at-some-time of everything else. .
+  (if (eq :proof-found
+	  (prove '(forall (?x)
+		   (implies 
+		    (exists (?t)
+		     (not (exists_at ?x ?t)))
+		    (forall (?q)
+		     (and (not (= ?q ?x))
+			  (rel-at-some-time ?x ?q)))))))
+
+	  :whoopsn
+	  :seems-ok))
+
+;; Fabian says:
+
+;; The reason why you weren't able to duplicate my comment is because I
+;; formulated sloppily. I should have written: Something that does not
+;; exists at some time is part-at-some-time of everything else that
+;; exists at that time.
+
+;; all x (all y
+;; (relationAtSomeTime(x, y) <-> ( exists z 
+;;     (existsAt(x,z) -> 
+;;        existsAt(y,z) & rel(x,y,z)  
+;;     )
+;; ))). 
+
+;; -existsAt(fabian, year2100). 
+;; existsAt(foo, year2100). 
+
+;; entails
+
+;; relationAtSomeTime(fabian, foo).  
+
+
+(defun test-stronger-documented-some-time-relation-2 ()
+  (initialize)
+  (use-resolution t)
+  ;;  x rel-at-some-time y -> exists(t) exists_at(x,t) -> exists_at(y,t) and rel(x,y,t)
+  (assert '(forall (?x ?y)
+	    (iff
+	     (rel-at-some-time ?x ?y)
+	     (exists (?t)
+	      (implies
+	       (exists_at ?x ?t)
+	       (and (exists_at ?y ?t)
+		    (rel ?x ?y ?t)))))))
+
+  (assert '(and (not (exists_at fabian t1))
+	    (exists_at foo t1)))
+
+  (if (eq :proof-found
+	  (prove '(rel-at-some-time fabian foo)))
+      :whoops
+      :seems-ok))
+
+(defun test-alternative-to-documented-some-time-relation ()
+  (initialize)
+  (use-hyperresolution t)
+  ;;  x rel-at-some-time y -> exists(t) exists_at(x,t) and exists_at(y,t) and rel(x,y,t)
+  (assert '(forall (?x ?y)
+	    (iff
+	     (rel-at-some-time ?x ?y)
+	     (exists (?t)
+	      (and
+	       (exists_at ?x ?t)
+	       (exists_at ?y ?t)
+	       (rel ?x ?y ?t))))))
+
+  (assert '(and (not (exists_at fabian t1))
+	    (exists_at foo t1)))
+
+  (if (eq :proof-found
+	  (prove '(rel-at-some-time fabian foo)))
+      :whoops
+      :seems-ok))
+

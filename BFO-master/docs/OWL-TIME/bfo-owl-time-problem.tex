@@ -1,0 +1,159 @@
+\section*{Representing Time}
+
+
+\subsection*{\\
+The underspecification of time representations in OWL axioms}
+
+Both an axiom in the OBO representational syntax \todo{more on OBO} 
+%
+\begin{equation}
+\begin{split}
+\mclass{CellMembrane}\;\mirel{continuant\_part\_of}\;\mclass{Cell}
+\end{split}
+\label{eq:cellobo}
+\end{equation}
+%
+and the OWL axiom (often considered equivalent)
+%
+\begin{equation}
+\begin{split}
+\mclass{CellMembrane}\;\mathtt{subClassOf}\;\mclass{continuant\_part\_of}\;\mathtt{some}\;\mclass{Cell}
+\end{split}
+\label{eq:celldl}
+\end{equation}
+%
+do not exhibit any explicit commitment with regard to time. This is not a side issue, because it makes a
+difference whether, for example, a cell membrane is \emph{always} part of some cell or
+only \emph{at some time}. 
+The lack of temporal definition of OWL statements is especially unsatisfactory
+when it comes to transitive properties like $\mirel{continuant\_part\_of}$ or $\mirel{located\_in}$,
+where the suppression of the temporal factor can produce plainly wrong entailments,
+especially at the level of individuals, such as in the following example:
+%
+\begin{equation}
+\begin{split}
+\mirel{located\_in} (\mirel{Thrombus\#398}, \mirel{Heart\#431})  \\
+\mirel{located\_in} (\mirel{Heart\#431}, \mirel{Patient\#900})
+\end{split}
+\label{eq:trans}
+\end{equation}
+%
+If we now assume that \mirel{Heart\#431} is later transplanted to \mirel{Patient\#115}, we also have
+
+\begin{equation}
+\begin{split}
+\mirel{located\_in} (\mirel{Heart\#431}, \mirel{Patient\#115})
+\end{split}
+\label{eq:trans}
+\end{equation}
+
+This would entail that one of the patients is located within the other, which is plainly wrong. 
+Also, if we assume that the thrombus was no longer in the heart when it was transplanted to Patient\#115, then the inference to
+%
+\begin{equation}
+\begin{split}
+\mirel{located\_in} (\mirel{Thrombus\#398}, \mirel{Patient\#115})
+\end{split}
+\label{eq:transEntailment}
+\end{equation}
+%
+which follows from the transitivity of the relation $\mirel{located\_in}$, is obviously invalid.
+
+This has a far-reaching consequence: by default, OWL statements are temporally ambiguous in a way that may entail unintended consequences when domain ontologies are used for reasoning with real data. (A lack of an explicit treatment of temporal context has previously been implicated in an assessment of the quality of existential restrictions in OBO Foundry ontologies \cite{boeker2011}.)
+
+\subsection*{Strengths of Relatedness}
+
+We can now propose a distinction between different temporal \emph{strengths} of relatedness. These are to be satisfied by temporally qualified such as parthood defined in the OBO Relation Ontology  and apply to relations between continuants only. 
+We begin by characterising the ontological status of regions of time , henceforth referred to by the symbol $t$. 
+Times are either time intervals or time points. %, assuming that the latter can be approximated by infinitesimally small intervals.
+We restrict ourselves to those ternary relations for which it can be assumed that whenever they hold for a time interval, 
+they also hold for any of its subintervals, including time points. For example, if a car is located in a garage during a day, then it is located therein at any time interval during that day. If a patient's cholesterol level is elevated for a whole year, it is elevated over any duration of time during this year. 
+In the following, ternary relations are marked by the superscript $^t$, like in $\mrelt{rel}$, from which binary relations are  distinguished by
+$^b$, like in $\mrelb{rel}$.  
+
+Formally:
+\begin{equation}
+\begin{split}
+\forall a, b, t, t^\prime:\; \mrelt{rel}(a, b, t) \wedge \mirel{within}(t^\prime,t) \rightarrow
+\mrelt{rel}(a,b,t^\prime)
+\end{split}
+\label{eq:temporarily:temp}
+\end{equation}
+
+These are called time-distributive relations.
+
+\subsubsection*{Temporary Generic Relatedness (TGR)}
+
+Informally: for all instances $a$ of \mclass{A} there is some time $t$ and some instance $b$ of
+\mclass{B} such that $a$ is related to $b$ at $t$. Examples:
+\begin{enumerate}[(a)]
+\item for all apple seeds there is
+some apple such that the seed is part of the apple at some time;
+\item for all
+trees there is some leaf such that the leaf is part of the tree at some time.
+\end{enumerate}
+
+Formally:
+\begin{equation}
+\begin{split}
+\mclass{TemporarilyRelated}(\mclass{A},\mclass{B}) =_{def}&\;
+\forall a, t:\; \mrelt{inst}(\mclass{A}, a, t) \\
+&\ \rightarrow
+\exists b, t^\prime:\;(\mrelt{inst}(\mclass{B},b,t^\prime) \wedge
+\mrelt{rel}(a,b,t^\prime) \wedge \mirel{within}(t^\prime,t))
+\end{split}
+\label{eq:temporarily:cls}
+\end{equation}
+
+\subsubsection*{Permanent Generic Relatedness (PGR)}
+
+Informally: for all instances $a$ of \mclass{A} there is, at all times $t$ for which
+$a$ exists,
+some instance $b$ of \mclass{B} such that $a$ is related to $b$ at $t$, but not necessarily
+always the same $b$ at all times $t$. Examples:
+\begin{enumerate}[(a)]
+\item all cells have a water molecule as
+part at all times, but not always the same water molecule;
+\item every bacterial colony has some bacteria as parts at all times, but not
+always the same bacteria.
+\end{enumerate}
+
+\begin{equation}
+\begin{split}
+\mclass{PermanentlyGenericallyRelated}(\mclass{A},\mclass{B}) =_{def}&\;
+\forall a, t:\; \mrelt{inst}(\mclass{A}, a, t) \\
+&\ \rightarrow
+\exists b:\;(\mrelt{inst}(\mclass{B},b,t) \wedge
+\mrelt{rel}(a,b,t))
+\end{split}
+\label{eq:generically:cls}
+\end{equation}
+
+It is as PGR relations that the standard interpretation of OBO binary class-level relations are understood 
+such as in formula (\ref{eq:cellobo}) above, according to \cite{OBO:RO}.
+
+\subsubsection*{Permanent Specific Relatedness (PSR)}
+
+Informally, for all instances $a$ of \mclass{A} there is, at all times $t$ that $a$ exists, an
+instance $b$ of \mclass{B} such that $a$ is related to $b$ at $t$; in this case it is the
+same $b$ at all times $t$. Examples:
+\begin{enumerate}[(a)]
+\item a human being has a brain as part at all times, and it is necessarily the same brain;
+\item a radioactively marked molecule of DNA has the radioactive isotope as part
+at all times, and it is necessarily the same radioactive isotope.
+\end{enumerate}
+
+\begin{equation}
+\begin{split}
+\mclass{Permanently}&\mclass{SpecificallyRelated}(\mclass{A},\mclass{B}) =_{def}\;
+\forall a, t:\; \mrelt{inst}(\mclass{A}, a, t) \\
+&\ \rightarrow
+\exists b:\;\big(\mrelt{inst}(\mclass{B},b,t) \wedge
+\mrelt{rel}(a,b,t))
+\\
+&\quad\quad \wedge \forall t^\prime: (\mrelt{inst}(\mclass{A},a,t^\prime)
+\rightarrow (\mrelt{rel}(a,b,t^\prime) \wedge
+\mrelt{inst}(\mclass{B},b,t^\prime))\big)
+\end{split}
+\label{eq:specifically:cls}
+\end{equation}
