@@ -14,6 +14,7 @@
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Import>http://purl.obolibrary.org/obo/iao/2017-03-24/iao.owl</Import>
     <Import>http://purl.obolibrary.org/obo/bfo/2.0/bfo.owl</Import>
+    <Import>http://purl.obolibrary.org/obo/vo/external/ro-partial.owl</Import>
     <Declaration>
         <Class IRI="#MaintenancePlanSpecification"/>
     </Declaration>
@@ -123,6 +124,16 @@
         <Class IRI="#FailureMode"/>
         <ObjectIntersectionOf>
             <Class IRI="#Consequence"/>
+            <ObjectUnionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000063"/>
+                    <Class IRI="#StateOfFailureComponent"/>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000063"/>
+                    <Class IRI="#StateOfFailureMachine"/>
+                </ObjectSomeValuesFrom>
+            </ObjectUnionOf>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0001000"/>
                 <Class IRI="#FailureMechanism"/>
@@ -212,27 +223,20 @@
     <SubClassOf>
         <Class IRI="#MaintainableItemRole"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000052"/>
-            <Class IRI="#MaintainableItem"/>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000312"/>
+            <Class IRI="#MaintenanceProcess"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#MaintainableItemRole"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
-            <Class IRI="#MaintenanceAction"/>
-        </ObjectSomeValuesFrom>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000052"/>
+            <Class IRI="#Component"/>
+        </ObjectMinCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#MaintenanceAction"/>
         <Class IRI="http://purl.obolibrary.org/obo/BFO_0000015"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#MaintenanceAction"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
-            <Class IRI="#MaintainableItem"/>
-        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#MaintenanceNotification"/>
@@ -327,7 +331,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>#AssetRole</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">AssetRole = Def. a BFO:Role that is borne by an IOF:EngineeringSystem that has potential or actual value to an organisation</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">NEEDS REVIEW</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -362,7 +366,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>#MaintainableItemRole</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Maintainable_Item_Role = Def. a BFO:Role that is borne by one or more MNT:Maintainable_Item when performing MNT:Maintenance_Action</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Maintainable_Item_Role is a BFO:Role that is borne by a group of one or more IOF:component(s); and where the role is an output of a MNT:Maintenance_Strategy_Process.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
