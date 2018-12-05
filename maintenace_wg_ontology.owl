@@ -55,6 +55,9 @@
         <Class IRI="#MaintainableItemRole"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#MaintenanceStrategySpecification"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#ProcessOfDegradation"/>
     </Declaration>
     <Declaration>
@@ -67,6 +70,9 @@
         <Class IRI="#MaintenanceStrategyProcess"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Executed"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#EngineeringSystem"/>
     </Declaration>
     <Declaration>
@@ -74,6 +80,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#OperatingTriggeringEvent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExecutedInADefinedPeriod"/>
     </Declaration>
     <Declaration>
         <Class IRI="#MaintenanceWorkOrderSpecification"/>
@@ -91,6 +100,9 @@
         <Class IRI="#UNKNOWN"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Lifecycle"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#FailureMode"/>
     </Declaration>
     <Declaration>
@@ -104,9 +116,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="http://purl.obolibrary.org/obo/BFO_0000038"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MaintenanceStrategy"/>
     </Declaration>
     <Declaration>
         <Class IRI="#InspectionTriggeringEvent"/>
@@ -177,8 +186,12 @@
         <Class IRI="#UNKNOWN"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#FailureCause"/>
+        <Class IRI="#ExecutedInADefinedPeriod"/>
         <Class IRI="#UNKNOWN"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FailureCause"/>
+        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000003"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#FailureEffect"/>
@@ -227,6 +240,10 @@
             <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000063"/>
             <Class IRI="#MaintenanceProcess"/>
         </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Lifecycle"/>
+        <Class IRI="#UNKNOWN"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#MaintainableItem"/>
@@ -278,6 +295,19 @@
         <Class IRI="http://purl.obolibrary.org/obo/IAO_0000030"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#MaintenanceScheduleList"/>
+        <ObjectIntersectionOf>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000219"/>
+                <Class IRI="#MaintenanceWorkOrderSpecification"/>
+            </ObjectMinCardinality>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000219"/>
+                <Class IRI="#ExecutedInADefinedPeriod"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#MaintenanceStandardWorkProcedureSpecification"/>
         <Class IRI="http://purl.obolibrary.org/obo/IAO_0000104"/>
     </SubClassOf>
@@ -289,17 +319,6 @@
         </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#MaintenanceStrategy"/>
-        <Class IRI="http://purl.obolibrary.org/obo/IAO_0000030"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#MaintenanceStrategy"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000219"/>
-            <Class IRI="#MaintenanceStrategy"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#MaintenanceStrategyProcess"/>
         <Class IRI="http://purl.obolibrary.org/obo/BFO_0000015"/>
     </SubClassOf>
@@ -307,8 +326,25 @@
         <Class IRI="#MaintenanceStrategyProcess"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
-            <Class IRI="#MaintenanceStrategy"/>
+            <Class IRI="#MaintenanceStrategySpecification"/>
         </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaintenanceStrategySpecification"/>
+        <Class IRI="http://purl.obolibrary.org/obo/IAO_0000030"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaintenanceStrategySpecification"/>
+        <ObjectIntersectionOf>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000219"/>
+                <Class IRI="#FunctionalFailure"/>
+            </ObjectExactCardinality>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000219"/>
+                <Class IRI="#MaintenanceStrategyType"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#MaintenanceStrategyType"/>
@@ -445,13 +481,13 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#MaintenanceStrategy</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MaintenanceStrategy = Def. An IOA:InformationContentEntity describing the MNT:MaintenanceStrategyType to deal with a specific MNT:FunctionalFailure.</Literal>
+        <IRI>#MaintenanceStrategyProcess</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Def: A BFO:Process to produce a MNT:MaintenanceStrategySpecification</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#MaintenanceStrategyProcess</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Def: A BFO:Process to produce a MNT:MaintenanceStrategySpecification</Literal>
+        <IRI>#MaintenanceStrategySpecification</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MaintenanceStrategy = Def. An IOA:InformationContentEntity describing the MNT:MaintenanceStrategyType to deal with a specific MNT:FunctionalFailure.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
