@@ -12,135 +12,42 @@
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://purl.obolibrary.org/obo/bfo/2.0/bfo.owl</Import>
     <Import>http://purl.obolibrary.org/obo/iao/2017-03-24/iao-main.owl</Import>
     <Import>http://purl.obolibrary.org/obo/iao/2017-03-24/iao.owl</Import>
-    <Import>http://purl.obolibrary.org/obo/bfo/2.0/bfo.owl</Import>
     <Import>http://purl.obolibrary.org/obo/vo/external/ro-partial.owl</Import>
     <Declaration>
-        <Class IRI="#MaintenancePlanSpecification"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000053"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Consequence"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Component"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#StateOfFailureComponent"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FailureMechanism"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MaintenanceStandardWorkProcedureSpecification"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ManufacturingProcess"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000219"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#StateOfFailureMachine"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MaintenanceStrategyType"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FailureModeAndEffectsAnalysis"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#StateOfDegradation"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0001000"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MaintenanceScheduleList"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MaintainableItemRole"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MaintenanceStrategySpecification"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ProcessOfDegradation"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="http://purl.obolibrary.org/obo/BFO_0000035"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#InspectionAction"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MaintenanceStrategyProcess"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000052"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://purl.obolibrary.org/obo/IAO_0000104"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Executed"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EngineeringSystem"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MaintainableItem"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#OperatingTriggeringEvent"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ExecutedInADefinedPeriod"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MaintenanceWorkOrderSpecification"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#State"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FunctionalFailure"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#AssetRole"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#UNKNOWN"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Lifecycle"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FailureMode"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MaintenanceProcess"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MaintenanceTriggeringEvent"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#NonConformity"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000312"/>
     </Declaration>
     <Declaration>
         <Class IRI="http://purl.obolibrary.org/obo/BFO_0000038"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#InspectionTriggeringEvent"/>
+        <Class IRI="http://purl.obolibrary.org/obo/IAO_0000030"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.obolibrary.org/obo/IAO_0000104"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AssetRole"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Component"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Consequence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Downtime"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EngineeringSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Executed"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExecutedInADefinedPeriod"/>
     </Declaration>
     <Declaration>
         <Class IRI="#FailureCause"/>
@@ -149,16 +56,109 @@
         <Class IRI="#FailureEffect"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Downtime"/>
+        <Class IRI="#FailureMechanism"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#MaintenanceNotification"/>
+        <Class IRI="#FailureMode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FailureModeAndEffectsAnalysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FunctionalFailure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InspectionAction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InspectionTriggeringEvent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Lifecycle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaintainableItem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaintainableItemRole"/>
     </Declaration>
     <Declaration>
         <Class IRI="#MaintenanceAction"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://purl.obolibrary.org/obo/IAO_0000030"/>
+        <Class IRI="#MaintenanceNotification"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaintenancePlanSpecification"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaintenanceProcess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaintenanceScheduleList"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaintenanceStandardWorkProcedureSpecification"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaintenanceStrategyProcess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaintenanceStrategySpecification"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaintenanceStrategyType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaintenanceTriggeringEvent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaintenanceWorkOrderSpecification"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ManufacturingProcess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NonConformity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OperatingTriggeringEvent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProcessOfDegradation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#State"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StateOfDegradation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StateOfFailureComponent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StateOfFailureMachine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UNKNOWN"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000219"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000312"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000052"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000053"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0001000"/>
     </Declaration>
     <EquivalentClasses>
         <Class IRI="#FailureMode"/>
@@ -443,164 +443,287 @@
         <Class IRI="#OperatingTriggeringEvent"/>
     </DisjointClasses>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#AssetRole</IRI>
+        <Literal>Asset_Role is a a BFO:Role that is borne by an IOF:Engineered_System; and where the role that has potential or actual value to an organisation _ NEEDS REVIEWED</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000116"/>
+        <IRI>#AssetRole</IRI>
+        <Literal>Definition of ASSET: An item, entity or thing that has potential or actual value to an organization (ISO 55000). Note 1: Value can be tangible or intangible, financial or non-financial, and includes consideration of risks and liabilities. It can be positive or negative at different stages of the asset&apos;s life.
+
+The concept of roles is necessary to allow for physical components to play different roles e.g. a component can be an asset for accounting purposes and/or a maintainable item for maintenance purposes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>#AssetRole</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">NEEDS REVIEW</Literal>
+        <Literal>NEEDS REVIEW</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>#Downtime</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Downtime = Def. A BFO:OneDimensionalTemporalRegion where an IOF:Component is not available to perform its BFO:Function.</Literal>
+        <Literal>Downtime = Def. A BFO:OneDimensionalTemporalRegion where an IOF:Component is not available to perform its BFO:Function.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#FailureCause</IRI>
+        <Literal>A BFO:Occurrent that have led to a MNT:State_Of_Failure_Machine or  MNT:State_Of_Failure_Component.
+
+The circumstances during design, manufacture or use which have led to a failure</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000116"/>
+        <IRI>#FailureCause</IRI>
+        <Literal>Circumstances associated with design, manufacture, installation, use and maintenance that have led to a failure  (ISO 14226) OR  The circumstances during design, manufacture or use which have led to a failure  (iec 60300.3.11)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#FailureMechanism</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Failure_Mechanism: Def. a BFO:Process that results in MNT:StateOfFailure</Literal>
+        <Literal>Def: A BFO:Process that results in MNT:State_of_Failure.
+
+The physical, chemical, electrical, thermal or other process which results in failure</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000116"/>
+        <IRI>#FailureMechanism</IRI>
+        <Literal>ISO 14226: the physical, chemical, electrical, thermal or other process which results in failure.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#FailureMode</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">FailureMode: Def. A BFO:Realizable Entity that is the UNK:Consequence of a MNT:FailureMechanism through which the MNT:StateOfFailue occurs</Literal>
+        <Literal>Def. A BFO:Realizable Entity that is the UNK:Consequence of a MNT:FailureMechanism through which the MNT:StateOfFailue occurs</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000116"/>
+        <IRI>#FailureMode</IRI>
+        <Literal>ISO 14224:2006 - The effect by which a failure is observed on the failed item.  AS IEC 60300.3.11 - one of the possible states of a failed item for a given required function.  
+ MIL-STD-721-C: The consequence of the mechanism through which failure occurs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#FailureModeAndEffectsAnalysis</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">FailureModeAndEffectsAnalysisSpecification: An IAO:InformationContentEntity that describes a set of MNT:Failure_Mode and MNT:Failure_Effect.</Literal>
+        <Literal>Def: An IAO:InformationContentEntity that describes the output of a FMEA activity</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000116"/>
+        <IRI>#FailureModeAndEffectsAnalysis</IRI>
+        <Literal>MIL-STD-721C: a FMEA is a procedure by which each potential failure mode in a system is analysed to determine the results or effects thereof on the system and to classify each potential failure mode according to its severity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#InspectionTriggeringEvent</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A MNT: Maintenance_Triggering_Event that is a boundary of an UNK: Inspection_Action that begins a MNT: Maintenance_Process</Literal>
+        <Literal>A BFO:Process_Boundry boundary of an UNK: Inspection_Action that begins a MNT: Maintenance_Process.
+
+An inspection event that causes a maintenance process to be initiated</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#MaintainableItem</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Maintainable_Item = An IOF:Component when it bears a MNT:Maintainable_Item_Role</Literal>
+        <Literal>An IOF:Component when it bears a MNT:Maintainable_Item_Role.
+
+An item that constitutes a component or an assembly of components that is normally the lowest level in the equipment hierarchy during maintenance. (adapted from ISO 14224:2006)</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000116"/>
+        <IRI>#MaintainableItem</IRI>
+        <Literal>ISO 14224:2006 maintainable item - item that constitutes a part or an assembly of parts that is normally the lowest level in the equipment hierarchy during maintenance.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#MaintainableItemRole</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Maintainable_Item_Role is a BFO:Role that is borne by a group of one or more IOF:component(s); and where the role is an output of a MNT:Maintenance_Strategy_Process.</Literal>
+        <Literal>Maintainable_Item_Role is a BFO:Role that is borne by a group of one or more IOF:component(s); and where the role is an output of a MNT:Maintenance_Strategy_Process.
+
+Note: A component or grouping of components resulting from a maintenance strategy development process. When maintenance is performed it is done on this group.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000116"/>
+        <IRI>#MaintainableItemRole</IRI>
+        <Literal>Revised 23/11/18: Maintainable_Item_Role is a BFO:Role that is borne by a group of one or more IOF:component(s); and where the role is an output of a MNT:Maintenance_Strategy_Process. - Meeting 27/11 - Discussion with Chris Will and Ifigeneia about if we need a role for this</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#MaintenanceAction</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Maintenance_Action = Def. A BFO:Process to perform work on an IOF:Component according to a MNT:Maintenance_Work_Order_Specification</Literal>
+        <Literal>Def. A BFO:Process to perform work on an IOF:Component according to a MNT:Maintenance_Work_Order_Specification.
+
+One of more tasks necessary to retain an item in or restore it to a specified condition.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000116"/>
+        <IRI>#MaintenanceAction</IRI>
+        <Literal>MIL-STD-721C: an element of a maintenance event. One of more tasks (i.e., fault localization, fault isolation, servicing and inspection) necessary to retain an item in or restore it to a specified condition.   SMRP Def: One or more tasks necessary to retain an item in, or restore it to, a specified operating condition. A maintenance action includes corrective, as well as preventive and predictive, maintenance tasks that interrupt the asset function.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#MaintenanceNotification</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MaintenanceNotification = Def. An IAO:InformationContentEntity describing a MNT:Non-conformity</Literal>
+        <Literal>Def. An IAO:InformationContentEntity describing a MNT:Non-conformity
+
+A record describing a problem or sympton of an asset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#MaintenancePlanSpecification</IRI>
+        <Literal>Def. An IAO:Plan_Specification containing MNT:Maintenance_Strategies and MNT:Maintenance_Standard_Work_Procedures for a MNT:Maintainable_Item over its UNK:Lifecycle.
+
+The documentation of a plan for the maintenance of an asset over its life cycle</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000116"/>
         <IRI>#MaintenancePlanSpecification</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">11/9/19 - MH checked this is in Top25 terms and definition is up to date.
-There is a note: to discuss - MaintenanceStandardWorkProcedures is also a Plan Specification, can one PlanSpecification be part of another PlanSpecification?</Literal>
+        <Literal>11/9/19 MH: In the Google Drive there is a note: to discuss - MaintenanceStandardWorkProcedures is also a Plan Specification, can one PlanSpecification be part of another PlanSpecification?</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#MaintenancePlanSpecification</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Informal definition: The documentation of a plan for the maintenance of an asset over its life cycle
-
-Relevant Standards: IIMM v3.0: collated information, policies and procedures for the optimum maintenance of an asset, or group of assets</Literal>
+        <Literal>Relevant Standards: IIMM v3.0: collated information, policies and procedures for the optimum maintenance of an asset, or group of assets</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#MaintenancePlanSpecification</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Maintenance_Plan_Specification = Def. An IAO:Plan_Specification containing MNT:Maintenance_Strategies and MNT:Maintenance_Standard_Work_Procedures for a MNT:Maintainable_Item over its UNK:Lifecycle</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#MaintenanceProcess</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MaintenanceProcess = A BFO:Process comprised of MNT:MaintenanceAction to retain or restore an MNT:MaintainableItem to perform a BFO:Function</Literal>
+        <Literal>A BFO:Process comprised of MNT:MaintenanceAction to retain or restore an MNT:MaintainableItem to perform a BFO:Function.
+
+All activities necessary to retain or restore the functionality of an asset.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000116"/>
+        <IRI>#MaintenanceProcess</IRI>
+        <Literal>In Sept 2019 IOF Top down group issued paper on Top 25 terms. There is a class in their diagram for Maintenance Process, a subclass of Planned Process, but there is no definition for Maintenance Process specifically.
+
+In this diagram the Planned Process is a subclass of Action which is a subclass of Process</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#MaintenanceScheduleList</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MaintenanceScheduleList = Def. An IOA:InformationContentEntity describing a list of MNT:MaintenanceWorkOrderSpecification to be UNK:Executed in a defined period</Literal>
+        <Literal>Def. An IOA:InformationContentEntity describing a list of MNT:MaintenanceWorkOrderSpecification to be UNK:Executed in a defined period.
+
+A document (usually a digital record) used to organise and track maintenance management activities</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#MaintenanceStandardWorkProcedureSpecification</IRI>
+        <Literal>Def. An IAO:Plan_Specification that describes the steps required for a specific MNT:Maintenance_Action.
+
+Written instructions to achieve uniformity of the performance of a specific function</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000116"/>
         <IRI>#MaintenanceStandardWorkProcedureSpecification</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">11/9/19: MH checked definition here is up to date with Top 25 terms.
-There is a Note to discuss: subclassOf IAO:PlanSpecification (has part action specification), subclassOf: IAO:denotes exactly 1 MaintenanceAction</Literal>
+        <Literal>11/9/19 MH: There is a Note in the Google Drive to discuss: subclassOf IAO:PlanSpecification (has part action specification), subclassOf: IAO:denotes exactly 1 MaintenanceAction</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#MaintenanceStandardWorkProcedureSpecification</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Informal definition: Written instructions to achieve uniformity of the performance of a specific function
-
-Relevant Standards: International council on harmonisation:  detailed, written instructions to achieve uniformity of the performance of a specific function</Literal>
+        <Literal>Relevant Standards: International council on harmonisation:  detailed, written instructions to achieve uniformity of the performance of a specific function</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#MaintenanceStandardWorkProcedureSpecification</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Maintenance_Standard_Work_Procedure_Specification = Def. An IAO:Plan_Specification that describes the steps required for a specific MNT:Maintenance_Action</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#MaintenanceStrategyProcess</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Def: A BFO:Process to produce a MNT:MaintenanceStrategySpecification</Literal>
+        <Literal>Def: A BFO:Process to produce a MNT:MaintenanceStrategySpecification.
+
+Describes the process to produce a maintenance strategy for a maintainable item</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#MaintenanceStrategySpecification</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MaintenanceStrategy = Def. An IOA:InformationContentEntity describing the MNT:MaintenanceStrategyType to deal with a specific MNT:FunctionalFailure.</Literal>
+        <Literal>Def. An IOA:InformationContentEntity describing the MNT:MaintenanceStrategyType to deal with a specific MNT:FunctionalFailure.
+
+The documentation of which maintenance strategy is assigned to manage different asset functional failures</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#MaintenanceStrategyType</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MNT:Maintenance_Strategy_Type = Def. An IAO:Information_Content_Entity resulting from reliability-centred maintenance or other strategy development process</Literal>
+        <Literal>Def. An IAO:Information_Content_Entity resulting from a maintenance strategy development process  for a MNT:Maintainable_Item.
+
+The name given to a plan of action for how to manage a specific functional failure (run-to-failure, condition-based maintenance, failure finding, fixed interval maintenance) for a maintainable item.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>#MaintenanceTriggeringEvent</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Maintenance_Triggering_Event = Def. A BFO:ProcessBoundary that begins a MNT:MaintenanceProcess through the production of a  MNT:Maintenance_Work_Order_Specification</Literal>
+        <Literal>Maintenance_Triggering_Event = Def. A BFO:ProcessBoundary that begins a MNT:MaintenanceProcess through the production of a  MNT:Maintenance_Work_Order_Specification</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#MaintenanceWorkOrderSpecification</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Def. An IAO:Information_Content_Entity describing a desired MNT:Maintenance_Action</Literal>
+        <Literal>Def. An IAO:Information_Content_Entity describing a desired MNT:Maintenance_Action.
+
+A document (usually a digital record) used to organise and track maintenance management activities</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#NonConformity</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Non-conformity = Def. A loss of quality, function, or capability for a BFO:material entity or BFO:process</Literal>
+        <Literal>Def. A loss of quality, function, or capability for a BFO:material entity or BFO:process.
+
+A loss of quality, function or capability</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#OperatingTriggeringEvent</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A MNT:  MaintenanceTriggeringEvent that is a boundary of a IOF: Manufacturing Process that begins a MNT: MaintenanceProcess</Literal>
+        <Literal>A BFO:Process_Boundary in the operation of a IOF: Manufacturing Process that begins a MNT: Maintenance_Process.
+
+An operational event that causes a maintenance process to be initiated</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#ProcessOfDegradation</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Process_Of_Degradation = A BFO:Process that results in the loss of ability to perform a BFO:Function</Literal>
+        <Literal>A BFO:Process that results in the loss of ability to perform a BFO:Function.
+
+The loss of ability of a component or engineering system to perform its required function.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000116"/>
+        <IRI>#ProcessOfDegradation</IRI>
+        <Literal>Sources: 
+MIL-STD-721C: a gradual impairment of ability to perform.     
+
+OED: Reduction to an inferior type or stage of development; A lowering or reducing in strength, amount, etc.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#State</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">TODO: import from IOF ontology</Literal>
+        <Literal>TODO: import from IOF ontology</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#StateOfDegradation</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Stasis_Of_Degradation = Def. A BFO:Disposition when an IOF:Component experiences a MNT:Process_Of_Degradation</Literal>
+        <Literal>Def. A IOF:State in which some IOF:component endures and is moving towards non-conformity.
+
+Describes when a component is in the process of degrading</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000116"/>
+        <IRI>#StateOfDegradation</IRI>
+        <Literal>MIL-STD-72C (degradation): a gradual impairment of ability to perform</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000116"/>
+        <IRI>#StateOfFailureComponent</IRI>
+        <Literal>ISO 14224:2006 /ISO 13372 / AS IEC 60300.2 / AS IEC 60300.3.11 / AS IEC 60812 (failure):  Termination of the ability of an item to perform a required function. 
+
+Needs more discussion - State or Stasis?
+
+How does this fit into the concept of malfunction</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>#StateOfFailureComponent</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">StasisOfFailure = Def. A IOF:stasis (yet to be defined) in which some IOF:component endures and does not meet a requirement</Literal>
+        <Literal>Def. A IOF:State in which some IOF:component endures and does not meet a requirement.
+
+Describes when a component is in a failed state</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#StateOfFailureMachine</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">StateOfFailure = Def. A IOF:State (yet to be defined) in which some IOF:machine endures and does not meet a requirement</Literal>
+        <Literal>Def. A IOF:State in which some IOF:machine endures and does not meet a requirement.
+
+Describes when a machine is in a failed state</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000116"/>
+        <IRI>#StateOfFailureMachine</IRI>
+        <Literal>ISO 14224:2006 /ISO 13372 / AS IEC 60300.2 / AS IEC 60300.3.11 / AS IEC 60812 (failure):  Termination of the ability of an item to perform a required function.</Literal>
     </AnnotationAssertion>
 </Ontology>
 
 
 
-<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.7.2018-12-02T02:23:35Z) https://github.com/owlcs/owlapi -->
 
