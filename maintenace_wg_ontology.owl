@@ -86,6 +86,9 @@
         <Class IRI="#MaintenanceAction"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#MaintenanceNonStandardWorkSpecification"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#MaintenanceNotification"/>
     </Declaration>
     <Declaration>
@@ -101,6 +104,9 @@
         <Class IRI="#MaintenanceStandardWorkProcedureSpecification"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#MaintenanceStandardWorkSpecification"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#MaintenanceStrategyProcess"/>
     </Declaration>
     <Declaration>
@@ -111,9 +117,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#MaintenanceTriggeringEvent"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MaintenanceWorkOrderSpecification"/>
     </Declaration>
     <Declaration>
         <Class IRI="#ManufacturingProcess"/>
@@ -141,6 +144,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#UNKNOWN"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ZeroDimensionFailureEvent"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000219"/>
@@ -305,6 +311,17 @@
         <Class IRI="http://purl.obolibrary.org/obo/BFO_0000015"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#MaintenanceNonStandardWorkSpecification"/>
+        <Class IRI="http://purl.obolibrary.org/obo/IAO_0000030"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaintenanceNonStandardWorkSpecification"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000219"/>
+            <Class IRI="#MaintenanceAction"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#MaintenanceNotification"/>
         <Class IRI="http://purl.obolibrary.org/obo/IAO_0000030"/>
     </SubClassOf>
@@ -332,7 +349,7 @@
         <ObjectIntersectionOf>
             <ObjectMinCardinality cardinality="1">
                 <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000219"/>
-                <Class IRI="#MaintenanceWorkOrderSpecification"/>
+                <Class IRI="#MaintenanceStandardWorkSpecification"/>
             </ObjectMinCardinality>
             <ObjectExactCardinality cardinality="1">
                 <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000219"/>
@@ -350,6 +367,17 @@
             <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000219"/>
             <Class IRI="#MaintenanceAction"/>
         </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaintenanceStandardWorkSpecification"/>
+        <Class IRI="http://purl.obolibrary.org/obo/IAO_0000030"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaintenanceStandardWorkSpecification"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000219"/>
+            <Class IRI="#MaintenanceAction"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#MaintenanceStrategyProcess"/>
@@ -386,17 +414,6 @@
     <SubClassOf>
         <Class IRI="#MaintenanceTriggeringEvent"/>
         <Class IRI="http://purl.obolibrary.org/obo/BFO_0000035"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#MaintenanceWorkOrderSpecification"/>
-        <Class IRI="http://purl.obolibrary.org/obo/IAO_0000030"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#MaintenanceWorkOrderSpecification"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000219"/>
-            <Class IRI="#MaintenanceAction"/>
-        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ManufacturingProcess"/>
@@ -436,6 +453,10 @@
     <SubClassOf>
         <Class IRI="#StateOfFailureMachine"/>
         <Class IRI="#State"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ZeroDimensionFailureEvent"/>
+        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000148"/>
     </SubClassOf>
     <DisjointClasses>
         <Class IRI="#InspectionTriggeringEvent"/>
@@ -543,7 +564,7 @@ Note: A component or grouping of components resulting from a maintenance strateg
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#MaintenanceAction</IRI>
-        <Literal>Def. A BFO:Process to perform work on an IOF:Component according to a MNT:Maintenance_Work_Order_Specification.
+        <Literal>Def. A BFO:Process to perform work on an IOF:Component according to a MNT:Maintenance_Work_Specification.
 
 One of more tasks necessary to retain an item in or restore it to a specified condition.</Literal>
     </AnnotationAssertion>
@@ -551,6 +572,13 @@ One of more tasks necessary to retain an item in or restore it to a specified co
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000116"/>
         <IRI>#MaintenanceAction</IRI>
         <Literal>MIL-STD-721C: an element of a maintenance event. One of more tasks (i.e., fault localization, fault isolation, servicing and inspection) necessary to retain an item in or restore it to a specified condition.   SMRP Def: One or more tasks necessary to retain an item in, or restore it to, a specified operating condition. A maintenance action includes corrective, as well as preventive and predictive, maintenance tasks that interrupt the asset function.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#MaintenanceNonStandardWorkSpecification</IRI>
+        <Literal>Def. An IAO:Information_Content_Entity describing a desired MNT:Maintenance_Action  created when a MNT:Maintenance_Standard_Work_Specification does not exist
+
+A document (usually a digital record) used to organise and track maintenance management activities</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
@@ -616,6 +644,13 @@ Written instructions to achieve uniformity of the performance of a specific func
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#MaintenanceStandardWorkSpecification</IRI>
+        <Literal>Def. An IAO:Information_Content_Entity describing a desired MNT:Maintenance_Action.
+
+A document (usually a digital record) used to organise and track maintenance management activities</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#MaintenanceStrategyProcess</IRI>
         <Literal>Def: A BFO:Process to produce a MNT:MaintenanceStrategySpecification.
 
@@ -636,16 +671,9 @@ The documentation of which maintenance strategy is assigned to manage different 
 The name given to a plan of action for how to manage a specific functional failure (run-to-failure, condition-based maintenance, failure finding, fixed interval maintenance) for a maintainable item.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
-        <IRI>#MaintenanceTriggeringEvent</IRI>
-        <Literal>Maintenance_Triggering_Event = Def. A BFO:ProcessBoundary that begins a MNT:MaintenanceProcess through the production of a  MNT:Maintenance_Work_Order_Specification</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <IRI>#MaintenanceWorkOrderSpecification</IRI>
-        <Literal>Def. An IAO:Information_Content_Entity describing a desired MNT:Maintenance_Action.
-
-A document (usually a digital record) used to organise and track maintenance management activities</Literal>
+        <IRI>#MaintenanceTriggeringEvent</IRI>
+        <Literal>Maintenance_Triggering_Event = Def. A BFO:ProcessBoundary that begins a MNT:MaintenanceProcess through the production of a  MNT:Maintenance_Work_Specification</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
@@ -720,6 +748,16 @@ Describes when a machine is in a failed state</Literal>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000116"/>
         <IRI>#StateOfFailureMachine</IRI>
         <Literal>ISO 14224:2006 /ISO 13372 / AS IEC 60300.2 / AS IEC 60300.3.11 / AS IEC 60812 (failure):  Termination of the ability of an item to perform a required function.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#ZeroDimensionFailureEvent</IRI>
+        <Literal>Zero-(temporal)Dimension Failure Event has some participants one of which has ceased to realize some function, requirement, or fails to meet some specification.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ZeroDimensionFailureEvent</IRI>
+        <Literal>This definition was developed by the TOB team in September 2019.</Literal>
     </AnnotationAssertion>
 </Ontology>
 
