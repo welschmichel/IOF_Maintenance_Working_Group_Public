@@ -29,6 +29,9 @@
         <Class IRI="http://purl.obolibrary.org/obo/IAO_0000104"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#AssetFunction"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#AssetRole"/>
     </Declaration>
     <Declaration>
@@ -39,12 +42,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Downtime"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EngineeringSystem"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Executed"/>
     </Declaration>
     <Declaration>
         <Class IRI="#ExecutedInADefinedPeriod"/>
@@ -72,9 +69,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#InspectionTriggeringEvent"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Lifecycle"/>
     </Declaration>
     <Declaration>
         <Class IRI="#MaintainableItem"/>
@@ -119,7 +113,7 @@
         <Class IRI="#MaintenanceTriggeringEvent"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#ManufacturingProcess"/>
+        <Class IRI="#NEEDTOPLACE"/>
     </Declaration>
     <Declaration>
         <Class IRI="#NonConformity"/>
@@ -141,9 +135,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#StateOfFailureMachine"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#UNKNOWN"/>
     </Declaration>
     <Declaration>
         <Class IRI="#ZeroDimensionFailureEvent"/>
@@ -205,6 +196,10 @@
         <Class IRI="http://purl.obolibrary.org/obo/BFO_0000031"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#AssetFunction"/>
+        <Class IRI="#NEEDTOPLACE"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#AssetRole"/>
         <Class IRI="http://purl.obolibrary.org/obo/BFO_0000023"/>
     </SubClassOf>
@@ -214,19 +209,15 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Consequence"/>
-        <Class IRI="#UNKNOWN"/>
+        <Class IRI="#NEEDTOPLACE"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Downtime"/>
         <Class IRI="http://purl.obolibrary.org/obo/BFO_0000038"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#EngineeringSystem"/>
-        <Class IRI="#UNKNOWN"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#ExecutedInADefinedPeriod"/>
-        <Class IRI="#UNKNOWN"/>
+        <Class IRI="#NEEDTOPLACE"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#FailureCause"/>
@@ -234,7 +225,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#FailureEffect"/>
-        <Class IRI="#UNKNOWN"/>
+        <Class IRI="#NEEDTOPLACE"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#FailureMechanism"/>
@@ -263,11 +254,11 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#FunctionalFailure"/>
-        <Class IRI="#UNKNOWN"/>
+        <Class IRI="#NEEDTOPLACE"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#InspectionAction"/>
-        <Class IRI="#UNKNOWN"/>
+        <Class IRI="#NEEDTOPLACE"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#InspectionTriggeringEvent"/>
@@ -279,10 +270,6 @@
             <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000063"/>
             <Class IRI="#MaintenanceProcess"/>
         </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Lifecycle"/>
-        <Class IRI="#UNKNOWN"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#MaintainableItem"/>
@@ -416,10 +403,6 @@
         <Class IRI="http://purl.obolibrary.org/obo/BFO_0000035"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#ManufacturingProcess"/>
-        <Class IRI="#UNKNOWN"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#NonConformity"/>
         <Class IRI="http://purl.obolibrary.org/obo/BFO_0000016"/>
     </SubClassOf>
@@ -463,6 +446,15 @@
         <Class IRI="#MaintenanceTriggeringEvent"/>
         <Class IRI="#OperatingTriggeringEvent"/>
     </DisjointClasses>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#AssetFunction</IRI>
+        <Literal>MH Definitions from SAE JA1012
+Function - what the owner of user of a physical asset or system wants it to do.
+Function, primary - the function(s) which constitute the main reason(s) why a physical asset or system is acquired by its owner or user.
+function, secondary - functions which a physical asset or system has to fulfil apart from its primary function(s), such as those needed to fulfil regulatory
+requirements and those which concern issues such as protection, control, containment, comfort, appearance, energy efficiency and structural integrity.</Literal>
+    </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#AssetRole</IRI>
@@ -517,8 +509,10 @@ The physical, chemical, electrical, thermal or other process which results in fa
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000116"/>
         <IRI>#FailureMode</IRI>
-        <Literal>ISO 14224:2006 - The effect by which a failure is observed on the failed item.  AS IEC 60300.3.11 - one of the possible states of a failed item for a given required function.  
- MIL-STD-721-C: The consequence of the mechanism through which failure occurs</Literal>
+        <Literal>Definitions differ slightly between standards.
+ISO 14224:2006 - The effect by which a failure is observed on the failed item.  
+AS IEC 60300.3.11 - one of the possible states of a failed item for a given required function.  
+MIL-STD-721-C: The consequence of the mechanism through which failure occurs</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
@@ -529,6 +523,36 @@ The physical, chemical, electrical, thermal or other process which results in fa
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000116"/>
         <IRI>#FailureModeAndEffectsAnalysis</IRI>
         <Literal>MIL-STD-721C: a FMEA is a procedure by which each potential failure mode in a system is analysed to determine the results or effects thereof on the system and to classify each potential failure mode according to its severity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FailureModeAndEffectsAnalysis</IRI>
+        <Literal>MH 22/9/19 Need to check if the axiom FMEA SubClassOf (denotes min 1 FailureEffect) and (denotes min 1 FailureMode) is appropriate given the FMEA is a paper exercise.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#FunctionalFailure</IRI>
+        <Literal>Defn: a state in which a physical asset or system is unable to perform a specific function to a desired level of performance.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+        <IRI>#FunctionalFailure</IRI>
+        <Literal>SAE JA 1012 A Guide to the Reliability-Centered Maintenance (RCM) Standard JA1012_201108</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FunctionalFailure</IRI>
+        <Literal>MH: A functionalFailure is related to the function the asset should perform</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#InspectionAction</IRI>
+        <Literal>Defn: Examination of an item against a specific standard.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+        <IRI>#InspectionAction</IRI>
+        <Literal>IEC 60300.3.11 2011 Dependability management Application guide - Reliability centred maintenance</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
