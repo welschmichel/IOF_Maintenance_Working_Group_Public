@@ -777,13 +777,13 @@ Describes when a machine is in a failed state</Literal>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#ZeroDimensionFailureEvent</IRI>
-        <Literal>Zero-(temporal)Dimension Failure Event has some participants one of which has ceased to realize some function, requirement, or fails to meet some specification.</Literal>
+        <Literal>Failure event =def. Process p in an artifact x in which one participant ceases to realize some capability whose realization is required by x</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#ZeroDimensionFailureEvent</IRI>
         <Literal>Sept 2019 [MH]:  The definition &quot;Zero-(temporal)Dimension Failure Event has some participants one of which has ceased to realize some function, requirement, or fails to meet some specification&quot; .was developed by the TOB team in September 2019. It sat under the class temporal region&gt;zero-dimensional termporal region&gt;ZeroDimensionalDailureEvent
-Dec 4th 2019 [MH]: This definition was changed (by Barry Smith) to
+Dec 4th 2019 [MH]: This definition was initially changed (by Barry Smith) to
 &quot;Failure event is a process at least one participant of which has ceased to realize some function, requirement or specification in the course of this process and that is not what we wanted&quot;
 
 We also MOVED the location of failure event to be under Process rather where it was (see above).
@@ -792,7 +792,11 @@ Barry Smith also emailed the following
 BFO
 every event (= BFO process) occupies a unique spatiotemporal region
 at any given time instant this spatiotemporal region is projected onto a unique spatial region
-if the event does not involve spatial motion that it is projected at all times onto the same spatial region</Literal>
+if the event does not involve spatial motion that it is projected at all times onto the same spatial region
+
+Then it was refined to:
+Failure event =def. Process p in an artifact x in which one participant ceases to realize some capability whose realization is required by x
+THIS IS WHAT IS IN THERE NOW.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
