@@ -227,25 +227,10 @@ MIL-STD-721-C: The consequence of the mechanism through which failure occurs</ob
 
     <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#FailureModeAndEffectsAnalysis">
         <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DescriptiveInformationContentEntity"/>
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
-                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                        <owl:onClass rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#FailureEffect"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
-                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                        <owl:onClass rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#FailureMode"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>An IAO:InformationContentEntity that describes the output of a FMEA activity</obo:IAO_0000115>
         <obo:IAO_0000116>MIL-STD-721C: a FMEA is a procedure by which each potential failure mode in a system is analysed to determine the results or effects thereof on the system and to classify each potential failure mode according to its severity.</obo:IAO_0000116>
-        <rdfs:comment>MH 22/9/19 Need to check if the axiom FMEA SubClassOf (denotes min 1 FailureEffect) and (denotes min 1 FailureMode) is appropriate given the FMEA is a paper exercise.</rdfs:comment>
+        <rdfs:comment>MH 22/9/19 Need to check if the axiom FMEA SubClassOf (denotes min 1 FailureEffect) and (denotes min 1 FailureMode) is appropriate given the FMEA is a paper exercise.
+MH 5/12/19 Removed axioms as per IOF directive</rdfs:comment>
         <rdfs:label>Failure and Effects Analysis</rdfs:label>
     </owl:Class>
     
@@ -354,15 +339,9 @@ One of more tasks necessary to retain an item in or restore it to a specified co
 
     <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceNonStandardWorkSpecification">
         <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceAction"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000116>4/12/19: Used to be Def. An IAO:Information_Content_Entity describing a desired MNT:Maintenance_Action  created when a MNT:Maintenance_Standard_Work_Specification does not exist
 
-Had to edit when removed IAO</obo:IAO_0000116>
+5/12/19 MH Had to edit when removed IAO, including removing axiom</obo:IAO_0000116>
         <CommonCoreOntologies:definition>An Directive Information Content Entity describing a desired MNT:Maintenance_Action  created when a MNT:Maintenance_Standard_Work_Specification does not exist</CommonCoreOntologies:definition>
         <rdfs:comment>A document (usually a digital record) used to organise and track maintenance management activities</rdfs:comment>
         <rdfs:label>Maintenance Non Standard Work Specification</rdfs:label>
@@ -374,15 +353,9 @@ Had to edit when removed IAO</obo:IAO_0000116>
 
     <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceNotification">
         <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#NonConformity"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>A Descriptive Information Content Entity describing a MNT:Non-conformity</obo:IAO_0000115>
-        <obo:IAO_0000116>4/12/19 MH: USed to be Def. An IAO:InformationContentEntity describing a MNT:Non-conformity but removed IAO</obo:IAO_0000116>
+        <obo:IAO_0000116>4/12/19 MH: USed to be Def. An IAO:InformationContentEntity describing a MNT:Non-conformity but removed IAO
+5/12/19 MH: removed axiom as per IOF directive</obo:IAO_0000116>
         <rdfs:comment>A record describing a problem or sympton of an asset</rdfs:comment>
         <rdfs:label>Maintenance Notification</rdfs:label>
     </owl:Class>
@@ -434,19 +407,14 @@ ALso removed IAO axiom</obo:IAO_0000116>
 
     <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceStandardWorkProcedureSpecification">
         <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceAction"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>A Directive Information Content Entity that describes the steps required for a specific MNT:Maintenance_Action.</obo:IAO_0000115>
         <obo:IAO_0000116>4/12/19 MH: Used to be Def. An IAO:Plan_Specification that describes the steps required for a specific MNT:Maintenance_Action. but changed when removed IAO
 
 11/9/19 MH: There is a Note in the Google Drive to discuss: subclassOf IAO:PlanSpecification (has part action specification), subclassOf: IAO:denotes exactly 1 MaintenanceAction
 
-Written instructions to achieve uniformity of the performance of a specific function</obo:IAO_0000116>
+Written instructions to achieve uniformity of the performance of a specific function
+
+5/12/19 MH Removed axiom as per IOF directive</obo:IAO_0000116>
         <rdfs:comment>Relevant Standards: International council on harmonisation:  detailed, written instructions to achieve uniformity of the performance of a specific function</rdfs:comment>
         <rdfs:label>Maintenance Standard Work Procediures Specification</rdfs:label>
     </owl:Class>
