@@ -227,10 +227,12 @@ MIL-STD-721-C: The consequence of the mechanism through which failure occurs</ob
 
     <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#FailureModeAndEffectsAnalysis">
         <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DescriptiveInformationContentEntity"/>
-        <obo:IAO_0000115>An IAO:InformationContentEntity that describes the output of a FMEA activity</obo:IAO_0000115>
-        <obo:IAO_0000116>MIL-STD-721C: a FMEA is a procedure by which each potential failure mode in a system is analysed to determine the results or effects thereof on the system and to classify each potential failure mode according to its severity.</obo:IAO_0000116>
-        <rdfs:comment>MH 22/9/19 Need to check if the axiom FMEA SubClassOf (denotes min 1 FailureEffect) and (denotes min 1 FailureMode) is appropriate given the FMEA is a paper exercise.
-MH 5/12/19 Removed axioms as per IOF directive</rdfs:comment>
+        <obo:IAO_0000112>Need to do</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">An Descriptive InformationContentEntity that describes the output of a FMEA activity</obo:IAO_0000115>
+        <obo:IAO_0000116>MH 22/9/19 Need to check if the axiom FMEA SubClassOf (denotes min 1 FailureEffect) and (denotes min 1 FailureMode) is appropriate given the FMEA is a paper exercise.
+MH 5/12/19 Removed axioms as per IOF directive</obo:IAO_0000116>
+        <CommonCoreOntologies:alternative_label>FMEA</CommonCoreOntologies:alternative_label>
+        <CommonCoreOntologies:definition_source>MIL-STD-721C: a FMEA is a procedure by which each potential failure mode in a system is analysed to determine the results or effects thereof on the system and to classify each potential failure mode according to its severity.</CommonCoreOntologies:definition_source>
         <rdfs:label>Failure and Effects Analysis</rdfs:label>
     </owl:Class>
     
@@ -339,12 +341,13 @@ One of more tasks necessary to retain an item in or restore it to a specified co
 
     <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceNonStandardWorkSpecification">
         <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity"/>
+        <obo:IAO_0000112>A document (usually a digital record) used to organise and track maintenance management activities resulting from a maintenance notification or other trigger from intiating work that is not part of structured maintenance work.</obo:IAO_0000112>
         <obo:IAO_0000116>4/12/19: Used to be Def. An IAO:Information_Content_Entity describing a desired MNT:Maintenance_Action  created when a MNT:Maintenance_Standard_Work_Specification does not exist
 
 5/12/19 MH Had to edit when removed IAO, including removing axiom</obo:IAO_0000116>
-        <CommonCoreOntologies:definition>An Directive Information Content Entity describing a desired MNT:Maintenance_Action  created when a MNT:Maintenance_Standard_Work_Specification does not exist</CommonCoreOntologies:definition>
-        <rdfs:comment>A document (usually a digital record) used to organise and track maintenance management activities</rdfs:comment>
-        <rdfs:label>Maintenance Non Standard Work Specification</rdfs:label>
+        <CommonCoreOntologies:definition>A Directive Information Content Entity describing a desired MNT:Maintenance_Action  created when a MNT:Maintenance_Standard_Work_Specification does not exist</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition_source>Working group generated</CommonCoreOntologies:definition_source>
+        <rdfs:label xml:lang="en">Maintenance Non Standard Work Specification</rdfs:label>
     </owl:Class>
     
 
@@ -353,11 +356,11 @@ One of more tasks necessary to retain an item in or restore it to a specified co
 
     <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceNotification">
         <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity"/>
+        <obo:IAO_0000112>A record describing a problem or sympton of an asset</obo:IAO_0000112>
         <obo:IAO_0000115>A Descriptive Information Content Entity describing a MNT:Non-conformity</obo:IAO_0000115>
         <obo:IAO_0000116>4/12/19 MH: USed to be Def. An IAO:InformationContentEntity describing a MNT:Non-conformity but removed IAO
 5/12/19 MH: removed axiom as per IOF directive</obo:IAO_0000116>
-        <rdfs:comment>A record describing a problem or sympton of an asset</rdfs:comment>
-        <rdfs:label>Maintenance Notification</rdfs:label>
+        <rdfs:label xml:lang="en">Maintenance Notification</rdfs:label>
     </owl:Class>
     
 
