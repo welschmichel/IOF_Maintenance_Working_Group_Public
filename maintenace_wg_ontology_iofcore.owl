@@ -10,14 +10,11 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:obda="https://w3id.org/obda/vocabulary#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/"
      xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:CommonCoreOntologies="http://www.ontologyrepository.com/CommonCoreOntologies/">
     <owl:Ontology rdf:about="http://www.semanticweb.org/maintenance_wg_ontology">
-        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/bfo/2.0/bfo.owl"/>
-        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/iao/2017-03-24/iao-main.owl"/>
-        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/iao/2017-03-24/iao.owl"/>
-        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/vo/external/ro-partial.owl"/>
         <owl:imports rdf:resource="https://www.industrialontologies.org/core"/>
     </owl:Ontology>
     
@@ -31,6 +28,12 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000063 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000063"/>
     
 
 
@@ -90,22 +93,6 @@
     <!-- http://purl.obolibrary.org/obo/BFO_0000038 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000038"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/IAO_0000030 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000030">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/IAO_0000104 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000104">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
-    </owl:Class>
     
 
 
@@ -239,7 +226,7 @@ MIL-STD-721-C: The consequence of the mechanism through which failure occurs</ob
     <!-- http://www.semanticweb.org/maintenance_wg_ontology#FailureModeAndEffectsAnalysis -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#FailureModeAndEffectsAnalysis">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DescriptiveInformationContentEntity"/>
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -256,9 +243,10 @@ MIL-STD-721-C: The consequence of the mechanism through which failure occurs</ob
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Def: An IAO:InformationContentEntity that describes the output of a FMEA activity</obo:IAO_0000115>
+        <obo:IAO_0000115>An IAO:InformationContentEntity that describes the output of a FMEA activity</obo:IAO_0000115>
         <obo:IAO_0000116>MIL-STD-721C: a FMEA is a procedure by which each potential failure mode in a system is analysed to determine the results or effects thereof on the system and to classify each potential failure mode according to its severity.</obo:IAO_0000116>
         <rdfs:comment>MH 22/9/19 Need to check if the axiom FMEA SubClassOf (denotes min 1 FailureEffect) and (denotes min 1 FailureMode) is appropriate given the FMEA is a paper exercise.</rdfs:comment>
+        <rdfs:label>Failure and Effects Analysis</rdfs:label>
     </owl:Class>
     
 
@@ -316,10 +304,11 @@ An inspection event that causes a maintenance process to be initiated</obo:IAO_0
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#Component"/>
-        <obo:IAO_0000115>An IOF:Component when it bears a MNT:Maintainable_Item_Role.
+        <obo:IAO_0000115>An IOF:Component when it bears a MNT:Maintainable_Item_Role.</obo:IAO_0000115>
+        <rdfs:comment>An item that constitutes a component or an assembly of components that is normally the lowest level in the equipment hierarchy during maintenance. (adapted from ISO 14224:2006)
 
-An item that constitutes a component or an assembly of components that is normally the lowest level in the equipment hierarchy during maintenance. (adapted from ISO 14224:2006)</obo:IAO_0000115>
-        <obo:IAO_0000116>ISO 14224:2006 maintainable item - item that constitutes a part or an assembly of parts that is normally the lowest level in the equipment hierarchy during maintenance.</obo:IAO_0000116>
+ISO 14224:2006 maintainable item - item that constitutes a part or an assembly of parts that is normally the lowest level in the equipment hierarchy during maintenance</rdfs:comment>
+        <rdfs:label>Maintainable Item</rdfs:label>
     </owl:Class>
     
 
@@ -364,16 +353,19 @@ One of more tasks necessary to retain an item in or restore it to a specified co
     <!-- http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceNonStandardWorkSpecification -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceNonStandardWorkSpecification">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceAction"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Def. An IAO:Information_Content_Entity describing a desired MNT:Maintenance_Action  created when a MNT:Maintenance_Standard_Work_Specification does not exist
+        <obo:IAO_0000116>4/12/19: Used to be Def. An IAO:Information_Content_Entity describing a desired MNT:Maintenance_Action  created when a MNT:Maintenance_Standard_Work_Specification does not exist
 
-A document (usually a digital record) used to organise and track maintenance management activities</obo:IAO_0000115>
+Had to edit when removed IAO</obo:IAO_0000116>
+        <CommonCoreOntologies:definition>An Directive Information Content Entity describing a desired MNT:Maintenance_Action  created when a MNT:Maintenance_Standard_Work_Specification does not exist</CommonCoreOntologies:definition>
+        <rdfs:comment>A document (usually a digital record) used to organise and track maintenance management activities</rdfs:comment>
+        <rdfs:label>Maintenance Non Standard Work Specification</rdfs:label>
     </owl:Class>
     
 
@@ -381,7 +373,7 @@ A document (usually a digital record) used to organise and track maintenance man
     <!-- http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceNotification -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceNotification">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
@@ -389,9 +381,10 @@ A document (usually a digital record) used to organise and track maintenance man
                 <owl:onClass rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#NonConformity"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Def. An IAO:InformationContentEntity describing a MNT:Non-conformity
-
-A record describing a problem or sympton of an asset</obo:IAO_0000115>
+        <obo:IAO_0000115>A Descriptive Information Content Entity describing a MNT:Non-conformity</obo:IAO_0000115>
+        <obo:IAO_0000116>4/12/19 MH: USed to be Def. An IAO:InformationContentEntity describing a MNT:Non-conformity but removed IAO</obo:IAO_0000116>
+        <rdfs:comment>A record describing a problem or sympton of an asset</rdfs:comment>
+        <rdfs:label>Maintenance Notification</rdfs:label>
     </owl:Class>
     
 
@@ -399,7 +392,7 @@ A record describing a problem or sympton of an asset</obo:IAO_0000115>
     <!-- http://www.semanticweb.org/maintenance_wg_ontology#MaintenancePlanSpecification -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#MaintenancePlanSpecification">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000104"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity"/>
         <obo:IAO_0000115>Def. An IAO:Plan_Specification containing MNT:Maintenance_Strategies and MNT:Maintenance_Standard_Work_Procedures for a MNT:Maintainable_Item over its UNK:Lifecycle.
 
 The documentation of a plan for the maintenance of an asset over its life cycle</obo:IAO_0000115>
@@ -426,26 +419,13 @@ In this diagram the Planned Process is a subclass of Action which is a subclass 
     <!-- http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceScheduleList -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceScheduleList">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
-                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                        <owl:onClass rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceStandardWorkSpecification"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
-                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                        <owl:onClass rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#ExecutedInADefinedPeriod"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Def. An IOA:InformationContentEntity describing a list of MNT:MaintenanceWorkOrderSpecification to be UNK:Executed in a defined period.
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity"/>
+        <obo:IAO_0000116>4/12/19: MH the def used to be Def. An IOA:InformationContentEntity describing a list of MNT:MaintenanceWorkOrderSpecification to be UNK:Executed in a defined period. but changed when IAO removed.
 
-A document (usually a digital record) used to organise and track maintenance management activities</obo:IAO_0000115>
+ALso removed IAO axiom</obo:IAO_0000116>
+        <CommonCoreOntologies:definition>A Directive Information Content Entity describing a list of MNT:MaintenanceWorkOrderSpecification to be UNK:Executed in a defined period.</CommonCoreOntologies:definition>
+        <rdfs:comment>A document (usually a digital record) used to organise and track maintenance management activities</rdfs:comment>
+        <rdfs:label>Maintenance Schedule List</rdfs:label>
     </owl:Class>
     
 
@@ -453,7 +433,7 @@ A document (usually a digital record) used to organise and track maintenance man
     <!-- http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceStandardWorkProcedureSpecification -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceStandardWorkProcedureSpecification">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000104"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
@@ -461,11 +441,14 @@ A document (usually a digital record) used to organise and track maintenance man
                 <owl:onClass rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceAction"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>Def. An IAO:Plan_Specification that describes the steps required for a specific MNT:Maintenance_Action.
+        <obo:IAO_0000115>A Directive Information Content Entity that describes the steps required for a specific MNT:Maintenance_Action.</obo:IAO_0000115>
+        <obo:IAO_0000116>4/12/19 MH: Used to be Def. An IAO:Plan_Specification that describes the steps required for a specific MNT:Maintenance_Action. but changed when removed IAO
 
-Written instructions to achieve uniformity of the performance of a specific function</obo:IAO_0000115>
-        <obo:IAO_0000116>11/9/19 MH: There is a Note in the Google Drive to discuss: subclassOf IAO:PlanSpecification (has part action specification), subclassOf: IAO:denotes exactly 1 MaintenanceAction</obo:IAO_0000116>
+11/9/19 MH: There is a Note in the Google Drive to discuss: subclassOf IAO:PlanSpecification (has part action specification), subclassOf: IAO:denotes exactly 1 MaintenanceAction
+
+Written instructions to achieve uniformity of the performance of a specific function</obo:IAO_0000116>
         <rdfs:comment>Relevant Standards: International council on harmonisation:  detailed, written instructions to achieve uniformity of the performance of a specific function</rdfs:comment>
+        <rdfs:label>Maintenance Standard Work Procediures Specification</rdfs:label>
     </owl:Class>
     
 
@@ -473,16 +456,15 @@ Written instructions to achieve uniformity of the performance of a specific func
     <!-- http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceStandardWorkSpecification -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceStandardWorkSpecification">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceAction"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Def. An IAO:Information_Content_Entity describing a desired MNT:Maintenance_Action.
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity"/>
+        <obo:IAO_0000115>Def. An IAO:Information_Content_Entity describing a desired MNT:Maintenance_Action.</obo:IAO_0000115>
+        <obo:IAO_0000116>4/12/19 MH: USed to be Def. An IAO:Information_Content_Entity describing a desired MNT:Maintenance_Action.
 
-A document (usually a digital record) used to organise and track maintenance management activities</obo:IAO_0000115>
+but IAO removed now.
+
+ALso removed axiom related to IAO</obo:IAO_0000116>
+        <rdfs:comment>A document (usually a digital record) used to organise and track maintenance management activities</rdfs:comment>
+        <rdfs:label>Maintenance Standard Work Specification</rdfs:label>
     </owl:Class>
     
 
@@ -507,26 +489,14 @@ Describes the process to produce a maintenance strategy for a maintainable item<
     <!-- http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceStrategySpecification -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceStrategySpecification">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
-                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                        <owl:onClass rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#FunctionalFailure"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
-                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                        <owl:onClass rdf:resource="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceStrategyType"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Def. An IOA:InformationContentEntity describing the MNT:MaintenanceStrategyType to deal with a specific MNT:FunctionalFailure.
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity"/>
+        <obo:IAO_0000116>4/12/19 MH edited old def Def. An IOA:InformationContentEntity describing the MNT:MaintenanceStrategyType to deal with a specific MNT:FunctionalFailure.
+due to removal of IAO.
 
-The documentation of which maintenance strategy is assigned to manage different asset functional failures</obo:IAO_0000115>
+ALso removed axiom related to IAO</obo:IAO_0000116>
+        <obo:IAO_0010000>A directive information content entity describing the MNT:MaintenanceStrategyType to deal with a specific MNT:FunctionalFailure.</obo:IAO_0010000>
+        <rdfs:comment>The documentation of which maintenance strategy is assigned to manage different asset functional failures</rdfs:comment>
+        <rdfs:label>Maintenance Strategy Specification</rdfs:label>
     </owl:Class>
     
 
@@ -534,10 +504,11 @@ The documentation of which maintenance strategy is assigned to manage different 
     <!-- http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceStrategyType -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceStrategyType">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
-        <obo:IAO_0000115>Def. An IAO:Information_Content_Entity resulting from a maintenance strategy development process  for a MNT:Maintainable_Item.
-
-The name given to a plan of action for how to manage a specific functional failure (run-to-failure, condition-based maintenance, failure finding, fixed interval maintenance) for a maintainable item.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity"/>
+        <obo:IAO_0000115>A directive information content entity resulting from a maintenance strategy development process  for a MNT:Maintainable_Item.</obo:IAO_0000115>
+        <obo:IAO_0000116>4/12/19 MH old definition: Def. An IAO:Information_Content_Entity resulting from a maintenance strategy development process  for a MNT:Maintainable_Item.</obo:IAO_0000116>
+        <rdfs:comment>The name given to a plan of action for how to manage a specific functional failure (run-to-failure, condition-based maintenance, failure finding, fixed interval maintenance) for a maintainable item.</rdfs:comment>
+        <rdfs:label>Maintenance Strategy Type</rdfs:label>
     </owl:Class>
     
 
