@@ -341,7 +341,7 @@ One of more tasks necessary to retain an item in or restore it to a specified co
 
     <owl:Class rdf:about="http://www.semanticweb.org/maintenance_wg_ontology#MaintenanceNonStandardWorkSpecification">
         <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity"/>
-        <obo:IAO_0000112>A document (usually a digital record) used to organise and track maintenance management activities resulting from a maintenance notification or other trigger from intiating work that is not part of structured maintenance work.</obo:IAO_0000112>
+        <obo:IAO_0000112>A document (usually a digital record) used to organise and track maintenance management activitiesfrom events work that is not part of structured maintenance work. Often called a maintenance notification in some CMMS systems</obo:IAO_0000112>
         <obo:IAO_0000116>4/12/19: Used to be Def. An IAO:Information_Content_Entity describing a desired MNT:Maintenance_Action  created when a MNT:Maintenance_Standard_Work_Specification does not exist
 
 5/12/19 MH Had to edit when removed IAO, including removing axiom</obo:IAO_0000116>
