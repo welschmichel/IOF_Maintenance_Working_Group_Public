@@ -233,7 +233,7 @@ MH 5/12/19 Removed axioms as per IOF directive</obo:IAO_0000116>
         <CommonCoreOntologies:acronym>FMEA</CommonCoreOntologies:acronym>
         <CommonCoreOntologies:definition xml:lang="en">descriptive Information Content Entity that describes the output of a failure mode and effects activity</CommonCoreOntologies:definition>
         <CommonCoreOntologies:definition_source>MIL-STD-721C: a FMEA is a procedure by which each potential failure mode in a system is analysed to determine the results or effects thereof on the system and to classify each potential failure mode according to its severity.</CommonCoreOntologies:definition_source>
-        <CommonCoreOntologies:elucidation>to add from Maint WG doc</CommonCoreOntologies:elucidation>
+        <CommonCoreOntologies:elucidation>A state of failure machine x is equivalent to an IOF state x where for some machine y and requirement w, y does not meet the requirement w.</CommonCoreOntologies:elucidation>
         <CommonCoreOntologies:term_creator>Melinda Hodkiewicz &amp; Caitlin Woods</CommonCoreOntologies:term_creator>
         <rdfs:label xml:lang="en">Failure and effects analysis specification</rdfs:label>
     </owl:Class>
