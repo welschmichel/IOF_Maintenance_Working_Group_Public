@@ -347,6 +347,7 @@ One of more tasks necessary to retain an item in or restore it to a specified co
         <obo:IAO_0000116>4/12/19: Used to be Def. An IAO:Information_Content_Entity describing a desired MNT:Maintenance_Action  created when a MNT:Maintenance_Standard_Work_Specification does not exist
 
 5/12/19 MH Had to edit when removed IAO, including removing axiom</obo:IAO_0000116>
+        <obo:IAO_0000602>$instanceOf(x, MaintenanceNonStandardWorkSpecification, t) \equiv \newline instanceOf(x, InformationContentEntity, t) \land \exists y(instanceOf(y, MaintenanceAction, t) \land denotes(x, y, t)) \land (denotes(x, y, t) \exists z(instanceOf(z, MaintenanceStandardWorkSpecification, t) \land denotes(z, y, t)))$</obo:IAO_0000602>
         <CommonCoreOntologies:definition>A Directive Information Content Entity describing a desired MNT:Maintenance_Action  created when a MNT:Maintenance_Standard_Work_Specification does not exist</CommonCoreOntologies:definition>
         <CommonCoreOntologies:definition_source>Working group generated</CommonCoreOntologies:definition_source>
         <rdfs:label xml:lang="en">Maintenance Non Standard Work Specification</rdfs:label>
