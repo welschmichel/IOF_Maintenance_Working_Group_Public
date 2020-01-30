@@ -344,7 +344,7 @@ An inspection event that causes a maintenance process to be initiated</obo:IAO_0
 [OR]
 The documentation of a plan for the maintenance of an asset over its life cycle.</obo:IAO_0000116>
         <obo:IAO_0000602>instanceOf(x,MachineMaintenancePlan,t)≡instanceOf(x,Plan,t)∧∃x_1,x_2,…,x_n, ∧∀i(instanceOf(x_i,MaintenanceAction,t)∧partOf(x_i,x)) ∧∃y,z(instanceOf(y, MaintenanceTriggeringEvent, t) ∧denotes(x,y) ∧ instanceOf(z,Machine,t) ∧bearerOf(z, y))</obo:IAO_0000602>
-        <CommonCoreOntologies:definition>an IOF:Plan that describes actions to be taken for a machine and that identifies the MNT:MaintenanceTriggeringEvent for the action</CommonCoreOntologies:definition>
+        <CommonCoreOntologies:definition>an IOF:Plan that describes maintenance actions to be taken for a machine and that identifies the MNT:MaintenanceTriggeringEvent for the machine</CommonCoreOntologies:definition>
         <CommonCoreOntologies:elucidation>A machine maintenance plan x is equivalent to a plan x such that there exists a set of maintenance actions xi (for x1 to xn) where all xi are parts of x and x describes the maintenance triggering event y for a machine z.</CommonCoreOntologies:elucidation>
         <CommonCoreOntologies:term_creator>Melinda Hodkiewicz, Caitlin Woods, Emily Low</CommonCoreOntologies:term_creator>
         <rdfs:label>Machine Maintenance Plan</rdfs:label>
