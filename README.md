@@ -19,4 +19,4 @@ To open the maintenance WG ontology, perform the following steps:
 
 Once the maintenance EG ontology is opened, you will see that the terms created by the Maintenance WG are highligted in bold under the "Classes" tab. By clicking on one of these terms, you will be able to view the definitions for these terms that were created b the maintenance WG.
 
-Please note that this ontology is a work in progress not all axioms have been included in the ontology yet. However, if you do wish to run a reasoner over the ontology. You can do so in protege by clicking "Start Reasoner". 
+Please note that this ontology is a work in progress and not all axioms have been included in the file. However, if you do wish to run a reasoner over the ontology. You can do so in Protege by clicking "Start Reasoner". 
