@@ -6,7 +6,7 @@ Please note that the current version of the maintenance working group reference 
 
 ### The Maintenance Working Group in the Context of the IOF Ontologies
 
-The Maintenance Working Group Reference Ontology directly imports the __IOF Core__ reference ontology (developed by the [IOF Top-Down working group](https://www.industrialontologies.org/top-down-wg/)). Figure 1 shows where ontologies developed by the Maintenance Working Group fit into the broader context of the IOF ontologies. More information about the modularisation choices made by thr IOF can be found on our [website](https://www.industrialontologies.org/iof-charter).
+The Maintenance Working Group Reference Ontology directly imports the __IOF Core__ reference ontology (developed by the [IOF Top-Down working group](https://www.industrialontologies.org/top-down-wg/)). Figure 1 shows where ontologies developed by the Maintenance Working Group fit into the broader context of the IOF ontologies. More information about the modularisation choices made by the IOF can be found on our [website](https://www.industrialontologies.org/iof-charter).
 
 ![Maintenance_WG_Context](./Documentation%20%26%20Resources/images/maintenance_wg_context.png)
 *Figure 1: Maintenance Working Group in the Context of the IOF Ontology*
