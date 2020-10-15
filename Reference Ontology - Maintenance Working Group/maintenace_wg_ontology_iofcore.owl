@@ -15,7 +15,6 @@
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:CommonCoreOntologies="http://www.ontologyrepository.com/CommonCoreOntologies/">
     <owl:Ontology rdf:about="http://www.semanticweb.org/maintenance_wg_ontology">
-        <owl:imports rdf:resource="http://example.org/unnamed"/>
         <owl:imports rdf:resource="https://www.industrialontologies.org/core"/>
     </owl:Ontology>
     

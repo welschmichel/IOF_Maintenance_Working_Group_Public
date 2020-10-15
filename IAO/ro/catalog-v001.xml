@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
-    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1568259246476" name="http://purl.obolibrary.org/obo/ro/annotations.owl" uri="annotations.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1568259246476" name="http://purl.obolibrary.org/obo/ro/bfo-axioms.owl" uri="bfo-axioms.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1568259246476" name="http://purl.obolibrary.org/obo/ro/bfo-classes-minimal.owl" uri="bfo-classes-minimal.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1568259246476" name="http://purl.obolibrary.org/obo/ro/core.owl" uri="core.owl"/>
-    </group>
-</catalog>
