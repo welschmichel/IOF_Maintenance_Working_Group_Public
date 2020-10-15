@@ -1,6 +1,6 @@
 # Purpose of This Branch
 
-This branch is a __snapshot__ of the work by the IOF Maintenance Working Group. The work presented in this branch relates to work procedured for the __Industrial Ontology Foundry (IOF) workshop__ for the (I-ESA 2020 Conference)[https://iesa2020.enit.fr/]. This branch __will not be updated__ as the Maintenance Working Group work evolves beyond October 2020.
+This branch is a __snapshot__ of the work by the IOF Maintenance Working Group. The work presented in this branch relates to work produced for the __Industrial Ontology Foundry (IOF) workshop__ for the [I-ESA 2020 Conference](https://iesa2020.enit.fr/). This branch __will not be updated__ as the Maintenance Working Group work evolves beyond October 2020.
 
 # IOF Maintenance Working Gropup
 
