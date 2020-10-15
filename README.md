@@ -2,11 +2,13 @@
 
 The [__Industrial Ontology Foundry__](https://www.industrialontologies.org/) is a group working to co-create a set of open reference ontologies for the manufacturing and engineering domains. The [__IOF Maintenance Working Group__](https://www.industrialontologies.org/maintenance-wg/) is working on a __reference ontology__ for industrial maintenance using a __top-down ontology engineering approach__. Further ongoing work within the Maintenance Working Group includes the development of __domain ontologies__ including a __failure modes and effects analysis ontology__ and a __maintenance procedure ontology__.
 
+Please note that the current version of the maintenance working group reference ontology has not yet been approved by the IOF Leadership Team.
+
 # The Maintenance Working Group in the Context of the IOF Ontologies
 
-The Maintenance Working Group Reference Ontology directly imports the __IOF Core__ reference ontology (developed by the [IOF Top-Down working group](https://www.industrialontologies.org/top-down-wg/)). Figure 1 shows where ontologies developed by the Maintenance Working Group fit into the broader context of the IOF ontologies. More information about the modularisation choices made by thr IOF can be found on our (website)[https://www.industrialontologies.org/iof-charter/].
+The Maintenance Working Group Reference Ontology directly imports the __IOF Core__ reference ontology (developed by the [IOF Top-Down working group](https://www.industrialontologies.org/top-down-wg/)). Figure 1 shows where ontologies developed by the Maintenance Working Group fit into the broader context of the IOF ontologies. More information about the modularisation choices made by thr IOF can be found on our [website](https://www.industrialontologies.org/iof-charter).
 
-![alt text](https://github.com/uwasystemhealth/IOF_Maintenance_Working_Group_Public/tree/master/Documentation%20%26%20Resources/images "Maintenance Working Group In the Context of The IOF")
+![](https://github.com/uwasystemhealth/IOF_Maintenance_Working_Group_Public/tree/master/Documentation%20%26%20Resources/images/maintenance_wg_context.png)
 
 *Figure 1: Maintenance Working Group in the Context of the IOF Ontology*
 
