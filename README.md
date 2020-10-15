@@ -6,7 +6,8 @@ The [__Industrial Ontology Foundry__](https://www.industrialontologies.org/) is 
 
 The Maintenance Working Group Reference Ontology directly imports the __IOF Core__ reference ontology (developed by the [IOF Top-Down working group](https://www.industrialontologies.org/top-down-wg/)). Figure 1 shows where ontologies developed by the Maintenance Working Group fit into the broader context of the IOF ontologies. More information about the modularisation choices made by thr IOF can be found on our (website)[https://www.industrialontologies.org/iof-charter/].
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Maintenance Working Group In the Context of The IOF")
+![alt text](https://github.com/uwasystemhealth/IOF_Maintenance_Working_Group_Public/tree/master/Documentation%20%26%20Resources/images "Maintenance Working Group In the Context of The IOF")
+
 *Figure 1: Maintenance Working Group in the Context of the IOF Ontology*
 
 # How to work with the maintenance ontology
