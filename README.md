@@ -1,4 +1,8 @@
-# The IOF Maintenance Working Group
+# Purpose of this branch
+
+This branch is a __snapshot__ of the work by the IOF Maintenance Working Group. The work presented in this branch relates to work procedured for the __Industrial Ontology Foundry (IOF) workshop__ for the (I-ESA 2020 Conference)[https://iesa2020.enit.fr/]. This branch __will not be updated__ as the Maintenance Working Group work evolves beyond October 2020.
+
+# IOF Maintenance Working Gropup
 
 The [__Industrial Ontology Foundry__](https://www.industrialontologies.org/) is a group working to co-create a set of open reference ontologies for the manufacturing and engineering domains. The [__IOF Maintenance Working Group__](https://www.industrialontologies.org/maintenance-wg/) is working on a __reference ontology__ for industrial maintenance using a __top-down ontology engineering approach__. Further ongoing work within the Maintenance Working Group includes the development of __domain ontologies__ including a __failure modes and effects analysis ontology__ and a __maintenance procedure ontology__.
 
